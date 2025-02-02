@@ -17,7 +17,6 @@ export default function Home() {
   const { input, handleInputChange, handleSubmit } = useChat({
     api: "/api/chat",
     onFinish: (message) => {
-      // Parse the response to extract emotion and message
       console.log("Full response:", message.content);
       const [emotion, ...content] = message.content.split("\n");
       setCurrentEmotion(emotion.toLowerCase() as Emotion);
@@ -66,7 +65,7 @@ export default function Home() {
         className="mt-6 w-full max-w-md bg-gray-800 p-4 rounded-xl shadow-md border border-gray-700 overflow-y-auto max-h-40"
       >
         {samMessage && (
-          <p className="text-green-400 leading-relaxed">Sam: {samMessage}</p>
+          <p className="leading-relaxed">{samMessage}</p>
         )}
       </div>
 
