@@ -21,16 +21,16 @@ export default function Modal({ onStartGame }: ModalProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-xs transition-opacity"></div>
 
       {/* Modal Content */}
-      <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-xl shadow-xl 
+      <div className="relative bg-linear-to-br from-slate-900 to-slate-950 text-white rounded-xl shadow-xl 
         w-[95%] sm:w-[90%] max-w-2xl z-50 overflow-hidden border border-slate-800">
         
         {/* Header with visual impact */}
         <div className="relative h-28 sm:h-40 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-50"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-600 opacity-50"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent"></div>
           
           <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
             <div className="flex items-center">
@@ -128,12 +128,12 @@ export default function Modal({ onStartGame }: ModalProps) {
                     Emotional States
                   </h4>
                   <div className="grid grid-cols-2 gap-1.5 text-xs sm:text-sm">
-                    <div className="px-2 py-1 bg-blue-900/40 rounded text-blue-200 border border-blue-800/40">Happy</div>
-                    <div className="px-2 py-1 bg-slate-800/40 rounded text-slate-300 border border-slate-700/40">Sad</div>
-                    <div className="px-2 py-1 bg-amber-900/40 rounded text-amber-200 border border-amber-800/40">Smirk</div>
-                    <div className="px-2 py-1 bg-purple-900/40 rounded text-purple-200 border border-purple-800/40">Doubtful</div>
-                    <div className="px-2 py-1 bg-slate-800/40 rounded text-slate-300 border border-slate-700/40">Neutral</div>
-                    <div className="px-2 py-1 bg-red-900/40 rounded text-red-200 border border-red-800/40">Angry</div>
+                    <div className="px-2 py-1 bg-blue-900/40 rounded-sm text-blue-200 border border-blue-800/40">Happy</div>
+                    <div className="px-2 py-1 bg-slate-800/40 rounded-sm text-slate-300 border border-slate-700/40">Sad</div>
+                    <div className="px-2 py-1 bg-amber-900/40 rounded-sm text-amber-200 border border-amber-800/40">Smirk</div>
+                    <div className="px-2 py-1 bg-purple-900/40 rounded-sm text-purple-200 border border-purple-800/40">Doubtful</div>
+                    <div className="px-2 py-1 bg-slate-800/40 rounded-sm text-slate-300 border border-slate-700/40">Neutral</div>
+                    <div className="px-2 py-1 bg-red-900/40 rounded-sm text-red-200 border border-red-800/40">Angry</div>
                   </div>
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default function Modal({ onStartGame }: ModalProps) {
         {/* Start Button */}
         <div className="p-4 sm:p-6 bg-slate-800/20 border-t border-slate-800">
           <button
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 
+            className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 
               active:from-blue-700 active:to-indigo-700 text-white py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg font-bold text-base sm:text-lg
               transition-all transform hover:translate-y-[-1px] active:translate-y-[1px]
               shadow-lg shadow-blue-500/20 flex items-center justify-center"

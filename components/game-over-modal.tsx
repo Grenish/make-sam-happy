@@ -68,7 +68,7 @@ export default function GameOverModal({ won, score, onPlayAgain }: GameOverModal
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"></div>
+      <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-xs transition-opacity"></div>
 
       {/* Modal Content */}
       <div className="relative bg-slate-900 text-slate-200 p-6 rounded-lg border border-slate-800 max-w-md w-[95%] transform transition-all scale-100 opacity-100 z-50 fade-in shadow-xl">

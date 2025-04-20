@@ -45,7 +45,7 @@ export default function ScoreTracker({ score, highScore, streak }: ScoreTrackerP
       </div>
       
       {streak > 0 && (
-        <div className="mt-2 bg-slate-800/80 rounded px-2 py-1 border border-slate-700/40 inline-flex items-center">
+        <div className="mt-2 bg-slate-800/80 rounded-sm px-2 py-1 border border-slate-700/40 inline-flex items-center">
           <Flame size={12} className="text-amber-400 mr-1" />
           <span className="text-xs">
             Streak: <span className="text-amber-300 font-bold">{streak}</span>

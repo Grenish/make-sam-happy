@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   --background: #0f172a;
@@ -39,18 +60,18 @@ body {
 
 /* Game card */
 .game-card {
-  @apply bg-slate-800 border border-slate-700/50 rounded-lg shadow-sm 
+  @apply bg-slate-800 border border-slate-700/50 rounded-lg shadow-xs 
     p-4 transition-all hover:shadow-md;
 }
 
 /* Glass overlay - subtle, not too blurry */
 .game-glass {
-  @apply bg-slate-800/80 backdrop-blur-sm border border-slate-700/50;
+  @apply bg-slate-800/80 backdrop-blur-xs border border-slate-700/50;
 }
 
 /* Badge for emotions */
 .emotion-badge {
-  @apply px-2 py-0.5 rounded text-xs font-medium;
+  @apply px-2 py-0.5 rounded-sm text-xs font-medium;
 }
 
 /* Improved scrollbar */

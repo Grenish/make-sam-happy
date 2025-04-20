@@ -57,7 +57,7 @@ export default function EmotionHistory({ history }: EmotionHistoryProps) {
         {/* Fill empty slots */}
         {Array(Math.max(0, 8 - recentHistory.length)).fill(0).map((_, i) => (
           <div key={`empty-${i}`} className="flex flex-col items-center">
-            <div className="h-2 w-10 sm:h-2 sm:w-10 bg-slate-800/50 border border-slate-700/30 rounded-sm" />
+            <div className="h-2 w-10 sm:h-2 sm:w-10 bg-slate-800/50 border border-slate-700/30 rounded-xs" />
           </div>
         ))}
       </div>

@@ -131,11 +131,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 text-white">
       <div className="w-full lg:w-1/2 flex flex-col h-screen p-3 sm:p-4 md:p-6">
         <div className="mb-4 sm:mb-6 flex justify-between items-center">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-indigo-400">
               Make Sam Happy
             </span>
           </h1>
@@ -261,7 +261,7 @@ export default function Home() {
 
               <div className="mt-2 w-full bg-slate-800/70 h-1.5 sm:h-2 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-indigo-600 to-blue-400 rounded-full transition-all duration-300"
+                  className="h-full bg-linear-to-r from-indigo-600 to-blue-400 rounded-full transition-all duration-300"
                   style={{ width: streak > 0 ? "80%" : "0%" }}
                 ></div>
               </div>
@@ -278,7 +278,7 @@ export default function Home() {
               type="text"
               placeholder="Type your message to Sam..."
               className="w-full bg-slate-900/80 border border-slate-700/50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12
-                text-slate-200 text-sm sm:text-base placeholder:text-slate-500 focus:outline-none focus:ring-2 
+                text-slate-200 text-sm sm:text-base placeholder:text-slate-500 focus:outline-hidden focus:ring-2 
                 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all"
               value={input}
               onChange={handleCustomInputChange}
@@ -320,12 +320,12 @@ export default function Home() {
       <div className="hidden lg:flex w-1/2 h-screen relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className={`absolute inset-0 transition-opacity duration-300 opacity-20
-            ${currentEmotion === 'happy' ? 'bg-gradient-to-br from-blue-600 to-indigo-800' : ''}
-            ${currentEmotion === 'sad' ? 'bg-gradient-to-br from-slate-700 to-slate-900' : ''}
-            ${currentEmotion === 'smirk' ? 'bg-gradient-to-br from-amber-500 to-amber-900' : ''}
-            ${currentEmotion === 'doubtful' ? 'bg-gradient-to-br from-purple-600 to-purple-900' : ''}
-            ${currentEmotion === 'emotionless' ? 'bg-gradient-to-br from-slate-600 to-slate-800' : ''}
-            ${currentEmotion === 'angry' ? 'bg-gradient-to-br from-red-600 to-red-900' : ''}
+            ${currentEmotion === 'happy' ? 'bg-linear-to-br from-blue-600 to-indigo-800' : ''}
+            ${currentEmotion === 'sad' ? 'bg-linear-to-br from-slate-700 to-slate-900' : ''}
+            ${currentEmotion === 'smirk' ? 'bg-linear-to-br from-amber-500 to-amber-900' : ''}
+            ${currentEmotion === 'doubtful' ? 'bg-linear-to-br from-purple-600 to-purple-900' : ''}
+            ${currentEmotion === 'emotionless' ? 'bg-linear-to-br from-slate-600 to-slate-800' : ''}
+            ${currentEmotion === 'angry' ? 'bg-linear-to-br from-red-600 to-red-900' : ''}
           `}></div>
         </div>
 
