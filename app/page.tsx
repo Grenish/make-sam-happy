@@ -132,9 +132,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 text-white">
-      <div className="w-full lg:w-1/2 flex flex-col h-screen p-3 sm:p-4 md:p-6">
-        <div className="mb-4 sm:mb-6 flex justify-between items-center">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">
+      <div className="w-full lg:w-1/2 flex flex-col h-screen p-2 sm:p-4 md:p-6">
+        <div className="mb-2 sm:mb-4 flex justify-between items-center">
+          <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold tracking-tight">
             <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-indigo-400">
               Make Sam Happy
             </span>
@@ -146,8 +146,8 @@ export default function Home() {
         </div>
         
         {/* Mobile Sam Display - Show on small screens only */}
-        <div className="lg:hidden mb-4 flex flex-col items-center">
-          <div className="relative mb-3 flex justify-center">
+        <div className="lg:hidden mb-3 flex flex-col items-center">
+          <div className="relative mb-2 flex justify-center w-full">
             <div className={`absolute inset-0 rounded-full blur-xl ${
               currentEmotion === 'happy' ? 'bg-blue-500/10' :
               currentEmotion === 'sad' ? 'bg-slate-500/10' :
@@ -159,10 +159,10 @@ export default function Home() {
             <div className="relative flex items-center justify-center">
               <Image
                 src={`/${currentEmotion}.png`}
-                width={140}
-                height={140}
+                width={180}
+                height={180}
                 alt={`Sam feeling ${currentEmotion}`}
-                className={`pointer-events-none select-none transition-opacity duration-300 drop-shadow-xl ${
+                className={`w-[160px] h-[160px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] pointer-events-none select-none transition-opacity duration-300 drop-shadow-xl ${
                   isLoading ? 'opacity-60' : 'opacity-100'
                 }`}
                 priority
@@ -186,8 +186,8 @@ export default function Home() {
           {/* Sam's message bubble for mobile */}
           <div
             ref={messageBoxRef}
-            className={`w-full px-4 py-3 rounded-xl shadow-lg text-sm
-              backdrop-blur-lg transition-all duration-300 overflow-y-auto max-h-24
+            className={`w-full px-3 py-2 rounded-xl shadow-lg text-sm
+              backdrop-blur-lg transition-all duration-300 overflow-y-auto max-h-24 sm:max-h-28
               ${currentEmotion === 'happy' ? 'bg-blue-900/20 border border-blue-800/40' : ''}
               ${currentEmotion === 'sad' ? 'bg-slate-800/20 border border-slate-700/40' : ''}
               ${currentEmotion === 'smirk' ? 'bg-amber-900/20 border border-amber-800/40' : ''}
@@ -233,33 +233,33 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto pr-2 sm:pr-4 pb-4 space-y-3 sm:space-y-5 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto pr-1 sm:pr-4 pb-2 sm:pb-4 space-y-2 sm:space-y-4 custom-scrollbar">
           <ScoreTracker score={score} highScore={highScore} streak={streak} />
 
-          <div className="bg-slate-800/40 rounded-xl p-3 sm:p-5 border border-slate-700/40 shadow-lg">
-            <div className="flex items-center mb-2 sm:mb-3">
+          <div className="bg-slate-800/40 rounded-xl p-2 sm:p-5 border border-slate-700/40 shadow-lg">
+            <div className="flex items-center mb-1.5 sm:mb-3">
               <Brain className="text-indigo-400 w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
-              <h2 className="font-semibold text-sm sm:text-base text-slate-200">Emotional History</h2>
+              <h2 className="font-semibold text-xs sm:text-base text-slate-200">Emotional History</h2>
             </div>
             <EmotionHistory history={emotionHistory} />
           </div>
 
-          <div className="bg-slate-800/40 rounded-xl p-3 sm:p-5 border border-slate-700/40 shadow-lg">
-            <div className="flex items-center mb-2 sm:mb-3">
+          <div className="bg-slate-800/40 rounded-xl p-2 sm:p-5 border border-slate-700/40 shadow-lg">
+            <div className="flex items-center mb-1.5 sm:mb-3">
               <Trophy className="text-amber-400 w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2" />
-              <h2 className="font-semibold text-sm sm:text-base text-slate-200">Game Objective</h2>
+              <h2 className="font-semibold text-xs sm:text-base text-slate-200">Game Objective</h2>
             </div>
             <p className="text-slate-400 text-xs sm:text-sm">Make Sam respond with "happy" to win the game.</p>
 
             <div className="mt-2 sm:mt-3 bg-indigo-950/60 rounded-lg p-2 sm:p-3 border border-indigo-900/50">
               <div className="flex items-center text-xs sm:text-sm">
-                <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-indigo-500 mr-1.5 sm:mr-2"></div>
+                <div className="w-2.5 h-2.5 sm:w-4 sm:h-4 rounded-full bg-indigo-500 mr-1.5 sm:mr-2"></div>
                 <span className="text-indigo-200">
                   {streak > 0 ? "Almost there!" : "Try to make Sam happy!"}
                 </span>
               </div>
 
-              <div className="mt-2 w-full bg-slate-800/70 h-1.5 sm:h-2 rounded-full overflow-hidden">
+              <div className="mt-1.5 sm:mt-2 w-full bg-slate-800/70 h-1.5 sm:h-2 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-linear-to-r from-indigo-600 to-blue-400 rounded-full transition-all duration-300"
                   style={{ width: streak > 0 ? "80%" : "0%" }}
@@ -271,7 +271,7 @@ export default function Home() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-3 sm:mt-4 bg-slate-800/40 rounded-xl p-3 sm:p-4 border border-slate-700/40 shadow-lg"
+          className="mt-2 sm:mt-4 bg-slate-800/40 rounded-xl p-2 sm:p-4 border border-slate-700/40 shadow-lg"
         >
           <div className="relative">
             <input
