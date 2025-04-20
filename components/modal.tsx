@@ -19,33 +19,33 @@ export default function Modal({ onStartGame }: ModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 flex items-center justify-center z-50 p-2 sm:p-4">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-xs transition-opacity"></div>
 
       {/* Modal Content */}
       <div className="relative bg-linear-to-br from-slate-900 to-slate-950 text-white rounded-xl shadow-xl 
-        w-[95%] sm:w-[90%] max-w-2xl z-50 overflow-hidden border border-slate-800">
+        w-[98%] sm:w-[90%] max-w-2xl z-50 overflow-hidden border border-slate-800">
         
         {/* Header with visual impact */}
-        <div className="relative h-28 sm:h-40 overflow-hidden">
+        <div className="relative h-24 sm:h-32 md:h-40 overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-600 opacity-50"></div>
           <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent"></div>
           
-          <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 md:p-6">
             <div className="flex items-center">
-              <div className="mr-3 sm:mr-4 bg-slate-800/80 p-1.5 sm:p-2 rounded-lg border border-slate-700/50">
+              <div className="mr-2 sm:mr-4 bg-slate-800/80 p-1 sm:p-2 rounded-lg border border-slate-700/50">
                 <Image 
                   src="/emotionless.png" 
                   alt="Sam" 
                   width={40}
                   height={40}
-                  className="rounded-md sm:w-[60px] sm:h-[60px]"
+                  className="w-[40px] h-[40px] rounded-md sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px]"
                 />
               </div>
               <div>
-                <h2 className="text-lg sm:text-2xl font-bold">Make Sam Happy</h2>
-                <p className="text-xs sm:text-base text-slate-300">A game of emotional intelligence</p>
+                <h2 className="text-base sm:text-xl md:text-2xl font-bold">Make Sam Happy</h2>
+                <p className="text-xs sm:text-sm md:text-base text-slate-300">A game of emotional intelligence</p>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Modal({ onStartGame }: ModalProps) {
         </div>
 
         {/* Tab content */}
-        <div className="p-4 sm:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[60vh]">
+        <div className="p-3 sm:p-4 md:p-6 overflow-y-auto max-h-[50vh] sm:max-h-[55vh] md:max-h-[60vh]">
           {activeTab === 'about' && (
             <div className="space-y-4">
               <p className="leading-relaxed text-slate-300 text-sm sm:text-base">
@@ -221,7 +221,7 @@ export default function Modal({ onStartGame }: ModalProps) {
         </div>
 
         {/* Start Button */}
-        <div className="p-4 sm:p-6 bg-slate-800/20 border-t border-slate-800">
+        <div className="p-3 sm:p-4 md:p-6 bg-slate-800/20 border-t border-slate-800">
           <button
             className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 
               active:from-blue-700 active:to-indigo-700 text-white py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg font-bold text-base sm:text-lg
