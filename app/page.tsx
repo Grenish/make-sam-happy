@@ -131,7 +131,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 text-white">
+    <div className={`min-h-screen flex flex-col lg:flex-row text-white transition-colors duration-500
+      ${currentEmotion === 'happy' ? 'bg-gradient-to-br from-blue-950 via-cyan-950 to-slate-950' : ''}
+      ${currentEmotion === 'sad' ? 'bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950' : ''}
+      ${currentEmotion === 'smirk' ? 'bg-gradient-to-br from-amber-950 via-orange-950 to-slate-950' : ''}
+      ${currentEmotion === 'doubtful' ? 'bg-gradient-to-br from-purple-950 via-violet-900 to-slate-950' : ''}
+      ${currentEmotion === 'emotionless' ? 'bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950' : ''}
+      ${currentEmotion === 'angry' ? 'bg-gradient-to-br from-red-950 via-rose-900 to-slate-950' : ''}
+    `}>
       <div className="w-full lg:w-1/2 flex flex-col h-screen p-2 sm:p-4 md:p-6">
         <div className="mb-2 sm:mb-4 flex justify-between items-center">
           <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold tracking-tight">
@@ -414,6 +421,26 @@ export default function Home() {
             )}
           </div>
         </div>
+      </div>
+
+      {/* Add subtle animated background elements */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className={`absolute w-96 h-96 rounded-full filter blur-3xl opacity-10 -top-20 -left-20 animate-pulse-slow
+          ${currentEmotion === 'happy' ? 'bg-blue-400' : ''}
+          ${currentEmotion === 'sad' ? 'bg-slate-400' : ''}
+          ${currentEmotion === 'smirk' ? 'bg-amber-400' : ''}
+          ${currentEmotion === 'doubtful' ? 'bg-purple-400' : ''}
+          ${currentEmotion === 'emotionless' ? 'bg-slate-400' : ''}
+          ${currentEmotion === 'angry' ? 'bg-red-400' : ''}
+        `}></div>
+        <div className={`absolute w-96 h-96 rounded-full filter blur-3xl opacity-10 -bottom-32 -right-20 animate-pulse-slow animation-delay-2000
+          ${currentEmotion === 'happy' ? 'bg-cyan-400' : ''}
+          ${currentEmotion === 'sad' ? 'bg-indigo-900' : ''}
+          ${currentEmotion === 'smirk' ? 'bg-orange-400' : ''}
+          ${currentEmotion === 'doubtful' ? 'bg-violet-400' : ''}
+          ${currentEmotion === 'emotionless' ? 'bg-indigo-400' : ''}
+          ${currentEmotion === 'angry' ? 'bg-rose-400' : ''}
+        `}></div>
       </div>
 
       {!gameActive && !showGameOver && <Modal onStartGame={startGame} />}
