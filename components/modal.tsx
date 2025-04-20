@@ -147,7 +147,7 @@ export default function Modal({ onStartGame }: ModalProps) {
                 <div>
                   <h4 className="font-bold text-slate-200 mb-1 text-sm sm:text-base">Game Objective</h4>
                   <p className="text-slate-300 text-xs sm:text-sm">
-                    Make Sam respond with "happy" three times in a row to win the game.
+                    Make Sam respond with "happy" just one time to win the game.
                   </p>
                 </div>
               </div>
