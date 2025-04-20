@@ -29,7 +29,7 @@ export default function EmotionHistory({ history }: EmotionHistoryProps) {
   
   return (
     <div className="w-full game-card">
-      <div className="flex items-center justify-between mb-2 sm:mb-3">
+      <div className="flex items-center justify-between mb-1 sm:mb-3">
         <p className="text-[10px] sm:text-xs font-bold text-slate-300">Emotional Journey</p>
         {recentHistory.length > 0 && (
           <span className="text-[10px] sm:text-xs text-slate-400">
@@ -38,16 +38,16 @@ export default function EmotionHistory({ history }: EmotionHistoryProps) {
         )}
       </div>
 
-      <div className="flex gap-1.5 flex-wrap">
+      <div className="flex gap-1 sm:gap-1.5 flex-wrap">
         {recentHistory.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <div 
-              className={`h-2 w-10 sm:h-2 sm:w-10 ${emotionColors[item.emotion].bg} rounded-sm 
+              className={`h-1.5 w-8 sm:h-2 sm:w-10 ${emotionColors[item.emotion].bg} rounded-sm 
                 ${index === recentHistory.length - 1 ? "ring-1 ring-white/20" : ""}`}
               title={`${item.emotion} at ${new Date(item.timestamp).toLocaleTimeString()}`}
             />
             {index === recentHistory.length - 1 && (
-              <span className={`text-[8px] sm:text-[10px] ${emotionColors[item.emotion].text} capitalize mt-1`}>
+              <span className={`text-[8px] sm:text-[10px] ${emotionColors[item.emotion].text} capitalize mt-0.5 sm:mt-1`}>
                 {item.emotion}
               </span>
             )}
@@ -57,7 +57,7 @@ export default function EmotionHistory({ history }: EmotionHistoryProps) {
         {/* Fill empty slots */}
         {Array(Math.max(0, 8 - recentHistory.length)).fill(0).map((_, i) => (
           <div key={`empty-${i}`} className="flex flex-col items-center">
-            <div className="h-2 w-10 sm:h-2 sm:w-10 bg-slate-800/50 border border-slate-700/30 rounded-xs" />
+            <div className="h-1.5 w-8 sm:h-2 sm:w-10 bg-slate-800/50 border border-slate-700/30 rounded-xs" />
           </div>
         ))}
       </div>
