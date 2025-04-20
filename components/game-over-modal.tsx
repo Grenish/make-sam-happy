@@ -71,26 +71,26 @@ export default function GameOverModal({ won, score, onPlayAgain }: GameOverModal
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-xs transition-opacity"></div>
 
       {/* Modal Content */}
-      <div className="relative bg-slate-900 text-slate-200 p-6 rounded-lg border border-slate-800 max-w-md w-[95%] transform transition-all scale-100 opacity-100 z-50 fade-in shadow-xl">
+      <div className="relative bg-slate-900 text-slate-200 p-4 sm:p-6 rounded-lg border border-slate-800 max-w-md w-[90%] sm:w-[95%] transform transition-all scale-100 opacity-100 z-50 fade-in shadow-xl">
         {/* Content */}
         <div className="relative z-10">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-4 sm:mb-6">
             {won ? (
-              <div className="bg-blue-900/20 p-4 rounded-full">
-                <Trophy className="w-12 h-12 text-blue-400" />
+              <div className="bg-blue-900/20 p-3 sm:p-4 rounded-full">
+                <Trophy className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400" />
               </div>
             ) : (
               <Image 
                 src="/sad.png" 
-                width={80} 
-                height={80} 
+                width={70} 
+                height={70} 
                 alt="Sad Sam" 
-                className="rounded-full border border-slate-800 shadow-lg"
+                className="sm:w-[80px] sm:h-[80px] rounded-full border border-slate-800 shadow-lg"
               />
             )}
           </div>
           
-          <h2 className="text-xl font-medium mb-3 text-center">
+          <h2 className="text-lg sm:text-xl font-medium mb-2 sm:mb-3 text-center">
             {won ? "Mission Accomplished" : "Try Again"}
           </h2>
           
