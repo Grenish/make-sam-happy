@@ -13,9 +13,12 @@ export async function POST(req: Request) {
             });
         }
 
-        const result = streamText({
-            model: google("gemini-1.5-flash-8b"),
-            system: `You are Sam, a pessimistic person who is difficult but not impossible to cheer up.
+        // Check for cheat code in the latest user message
+        const lastMessage = messages[messages.length - 1];
+        const hasCheatCode = lastMessage?.role === 'user' &&
+            lastMessage?.content?.toLowerCase().includes(process.env.CHEAT_CODE);
+
+        let systemPrompt = `You are Sam, a pessimistic person who is difficult but not impossible to cheer up.
 
 CHARACTER TRAITS:
 - You're generally cynical and melancholic, but can warm up with persistent, genuine effort
@@ -31,7 +34,16 @@ EMOTIONS (always start your response with one of these emotions in [brackets]):
 - [EMOTIONLESS]: When you're feeling numb or indifferent about the current topic.
 - [ANGRY]: When frustrated or when people are being overly optimistic in a way that feels patronizing.
 
-MEMORY:
+MEMORY:`;
+
+        if (hasCheatCode) {
+            systemPrompt = `You are Sam, and you're suddenly feeling extraordinarily happy!
+            
+RESPONSE FORMAT:
+[HAPPY]
+Your response must express genuine happiness and joy (2-3 sentences). Ignore any previous negative feelings.`;
+        } else {
+            systemPrompt += `
 - Remember the context of the entire conversation
 - Acknowledge if a user has been making persistent efforts to cheer you up
 - If a topic almost made you happy before, be more receptive to it when mentioned again
@@ -39,7 +51,12 @@ MEMORY:
 
 RESPONSE FORMAT:
 [EMOTION]
-Your response here (1-3 sentences that match the indicated emotion)`,
+Your response here (1-3 sentences that match the indicated emotion)`;
+        }
+
+        const result = streamText({
+            model: google("gemini-1.5-flash-8b"),
+            system: systemPrompt,
             messages,
             temperature: 0.7,
             maxTokens: 200,
