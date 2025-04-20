@@ -1,5 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --border: rgba(148, 163, 184, 0.15);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Simple animations without floating */
+@keyframes simple-pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+.animate-simple-pulse {
+  animation: simple-pulse 2s ease-in-out infinite;
+}
+
+/* Game-style button */
+.game-button {
+  @apply bg-blue-600 text-white font-medium py-2 px-4 rounded-md 
+    hover:bg-blue-500 active:bg-blue-700 transition-colors
+    shadow-[0_0_0_1px_rgba(59,130,246,0.3),0_1px_2px_0_rgba(0,0,0,0.05)]
+    flex items-center justify-center;
+}
+
+/* Game card */
+.game-card {
+  @apply bg-slate-800 border border-slate-700/50 rounded-lg shadow-xs 
+    p-4 transition-all hover:shadow-md;
+}
+
+/* Glass overlay - subtle, not too blurry */
+.game-glass {
+  @apply bg-slate-800/80 backdrop-blur-xs border border-slate-700/50;
+}
+
+/* Badge for emotions */
+.emotion-badge {
+  @apply px-2 py-0.5 rounded-sm text-xs font-medium;
+}
+
+/* Improved scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Game text highlight */
+.game-highlight {
+  @apply text-blue-400 font-medium;
+}
 
 
