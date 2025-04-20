@@ -41,10 +41,10 @@ export const Timer = ({ isRunning }: { isRunning: boolean }) => {
   const rank = getRank();
 
   return (
-    <div className="flex items-center bg-slate-800/80 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded-full border border-slate-700/50 shadow-xs">
-      <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 text-slate-400 mr-1 sm:mr-1.5 md:mr-2" />
-      <span className="text-sm sm:text-base md:text-lg font-mono font-medium text-white mr-1 sm:mr-1.5 md:mr-2">{formattedTime}</span>
-      <div className={`text-[9px] sm:text-[10px] md:text-xs font-medium py-0.5 px-1 sm:px-1.5 rounded-md ${rank.color} bg-slate-900/60`}>
+    <div className="flex items-center bg-slate-800/80 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-slate-700/50 shadow-xs">
+      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400 mr-1 sm:mr-2" />
+      <span className="text-base sm:text-lg font-mono font-medium text-white mr-1 sm:mr-2">{formattedTime}</span>
+      <div className={`text-[10px] sm:text-xs font-medium py-0.5 px-1 sm:px-1.5 rounded-md ${rank.color} bg-slate-900/60`}>
         {rank.name}
       </div>
     </div>
