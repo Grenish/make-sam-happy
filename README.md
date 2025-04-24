@@ -52,3 +52,13 @@ This project is licensed under the **MIT License**. See the LICENSE file for det
 🔗 **Website:** [Make Sam Happy](https://make-sam-happy.vercel.app/)  
 
 Let’s see if you have what it takes to **Make Sam Happy!** 🎭
+
+---
+
+## Snapshot of the game
+![starting](https://github.com/user-attachments/assets/51565678-d8da-4fbd-be85-54c0d2499e61)
+
+![home](https://github.com/user-attachments/assets/cd51c6c6-e211-4d4b-86e0-1b3fb2a0b622)
+
+![finish](https://github.com/user-attachments/assets/2a10c027-7917-4e2e-b5fa-ffec4b1ad974)
+
