@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-background: var(--background);
@@ -42,13 +42,8 @@ body {
 
 /* Simple animations without floating */
 @keyframes simple-pulse {
-  0%,
-  100% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
 }
 
 .animate-simple-pulse {
@@ -102,12 +97,4 @@ body {
   @apply text-blue-400 font-medium;
 }
 
-@keyframes shimmer {
-  100% {
-    transform: translateX(200%);
-  }
-}
 
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}

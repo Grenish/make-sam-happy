@@ -93,7 +93,8 @@ export default function Modal({ onStartGame }: ModalProps) {
           {activeTab === 'about' && (
             <div className="space-y-4">
               <p className="leading-relaxed text-slate-300 text-sm sm:text-base">
-                Sam is sad. Help him.
+                Sam is struggling with persistent melancholy and emotional distance. Your challenge is to 
+                break through these emotional barriers through thoughtful conversation.
               </p>
 
               <div className="grid grid-cols-2 gap-3 mt-4">
